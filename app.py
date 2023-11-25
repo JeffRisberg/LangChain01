@@ -14,13 +14,12 @@ as of September 2023, according to the Bloomberg Billionaires Index, and $253 bi
 """
 
 if __name__ == "__main__":
-    print("Hello LangChain")
+    print("Hello LangChain01")
 
     summary_template = """
       Given the information {information} about a person, I want to you create:
       1. a short summary of the person
       2. two interesting facts about the person
-
     """
 
     summary_prompt_template = PromptTemplate(
