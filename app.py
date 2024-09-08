@@ -1,7 +1,6 @@
-from langchain import PromptTemplate
-from langchain.chat_models import ChatOpenAI
-from langchain.chains import LLMChain
-
+from langchain_core.prompts import PromptTemplate
+from langchain_openai import ChatOpenAI
+from langchain_core.output_parsers import StrOutputParser
 
 information = """
 Elon Reeve Musk  is a business magnate and investor. Musk is the founder, chairman,
@@ -25,11 +24,11 @@ if __name__ == "__main__":
     summary_prompt_template = PromptTemplate(
         input_variables = ["information"], template = summary_template)
 
-    llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
+    llm = ChatOpenAI(temperature=0, model_name="gpt-4o-mini")
 
-    chain = LLMChain(llm=llm, prompt=summary_prompt_template)
 
-    print(chain.run(information=information))
+    chain = summary_prompt_template | llm | StrOutputParser()
+    print(chain.invoke(input=information))
 
 
 
