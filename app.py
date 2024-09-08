@@ -26,8 +26,8 @@ if __name__ == "__main__":
 
     llm = ChatOpenAI(temperature=0, model_name="gpt-4o-mini")
 
-
     chain = summary_prompt_template | llm | StrOutputParser()
+
     print(chain.invoke(input=information))
 
 
