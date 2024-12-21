@@ -1,4 +1,4 @@
 langchain==0.3.28
-openai==1.58.0
+openai==1.58.1
 langchain_openai==0.2.2
 
