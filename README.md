@@ -28,4 +28,9 @@ Then run the app with
 python app.py
 ```
 
+# Later
+
+```
+deactivate
+```
 
